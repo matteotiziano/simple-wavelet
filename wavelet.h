@@ -1,9 +1,9 @@
 #ifndef WAVELET_H
 #define WAVELET_H
 
-#include <stdexcept>
 #include <array>
 #include <vector>
+#include <stdexcept>
 
 #include "matrix.h"
 
@@ -19,7 +19,7 @@ enum WaveledSubbdand {
 };
 
 //=============================================================================
-// Decomposition1D and 2D
+// Decomposition1D and Decomposition1D2D
 // Contain and manage the result of 1D or 2D wavelet decomposition and provide
 // accessors to set/get a specific subband.
 //=============================================================================

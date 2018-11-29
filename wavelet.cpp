@@ -4,11 +4,12 @@
 using namespace Vector;
 
 //=============================================================================
-// Decomposition1
+// Decomposition1D
 //=============================================================================
 
 template<typename T>
 Decomposition1D<T>::Decomposition1D(size_t num_levels) {
+  // Internal representation is structured as
   // {d1, d2, ... dn, an}
   this->resize(num_levels + 1);
 }
@@ -48,11 +49,12 @@ void Decomposition1D<T>::SetAppcoef(const std::vector<T>& a) {
 }
 
 //=============================================================================
-// Decomposition2
+// Decomposition2D
 //=============================================================================
 
 template<typename T>
 Decomposition2D<T>::Decomposition2D(size_t num_levels) {
+  // Internal representation is structured as
   // {d1, v1, h1, d2, v2, h2, ... dn, vn, hn, an}
   this->resize(3 * num_levels + 1);
 }
@@ -90,7 +92,6 @@ const Matrix<T>& Decomposition2D<T>::GetDetcoef(WaveledSubbdand subband, size_t 
 
 template<typename T>
 void Decomposition2D<T>::SetDetcoef(const Matrix<T>& d, WaveledSubbdand subband, size_t n) {
-  // c = {d1, v1, h1, d2, v2, h2, ... dn, vn, hn, an}
   if (subband != kHorizontalSubband && subband != kVerticalSubband && subband != kDiagonalSubband) {
     throw std::invalid_argument("Decomposition2D::SetDetcoef");
   }

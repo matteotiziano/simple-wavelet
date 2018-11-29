@@ -1,5 +1,6 @@
 #include <cassert>
 #include <cmath>
+#include <cstddef>
 #include <iterator>
 #include <stdexcept>
 #include <random>
