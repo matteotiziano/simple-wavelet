@@ -87,7 +87,7 @@ public:
   std::vector<T> Diag() const;
 
   void Fill(T value);
-  void Rand();
+  void Rand(unsigned int seed = 0);
   void Identity();
 
   void Transpose();

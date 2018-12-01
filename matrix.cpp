@@ -215,9 +215,9 @@ void Matrix<T>::Fill(T value) {
 }
 
 template<typename T>
-void Matrix<T>::Rand() {
-  std::random_device rd;
-  std::mt19937 gen(rd());
+void Matrix<T>::Rand(unsigned int seed) {
+  std::mt19937 gen;
+  gen.seed(seed);
   std::uniform_real_distribution<T> dis(0, 1);
   std::generate(data_.begin(), data_.end(), [&dis, &gen]() {
     return dis(gen);

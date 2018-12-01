@@ -21,7 +21,9 @@ int main(int argc, const char *argv[]) {
   // Number of decomposition levels
   const size_t num_levels = static_cast<size_t>(std::stoi(argv[3]));
 
-  // Initialise a random 2D matrix
+  // Initialise a random 2D matrix using default seed
+  // Note: use `matrix.Rand(std::random_device()());` to generate different
+  // values at each execution
   Matrix<double> matrix(num_rows, num_cols);
   matrix.Rand();
 
