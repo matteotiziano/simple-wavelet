@@ -225,6 +225,11 @@ void Matrix<T>::Rand(unsigned int seed) {
 }
 
 template<typename T>
+void Matrix<T>::Rand() {
+  this->Rand(std::random_device()());
+}
+
+template<typename T>
 void Matrix<T>::Identity() {
   if (num_rows_ != num_cols_) {
     throw std::logic_error("Matrix::Identity");

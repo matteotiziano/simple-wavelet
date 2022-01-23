@@ -21,11 +21,11 @@ int main(int argc, const char *argv[]) {
   // Number of decomposition levels
   const size_t num_levels = static_cast<size_t>(std::stoi(argv[3]));
 
-  // Initialise a random 2D matrix using default seed
-  // Note: use `matrix.Rand(std::random_device()());` to generate different
-  // values at each execution
+  // Initialise a random 2D matrix using seed equal to 0
+  // Note: use `matrix.Rand();` without argument to generate
+  // different values at each execution
   Matrix<double> matrix(num_rows, num_cols);
-  matrix.Rand();
+  matrix.Rand(0);
 
   // Filters definition of Discrete Haar transform
   // https://en.wikipedia.org/wiki/Haar_wavelet#Haar_transform
